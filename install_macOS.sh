@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cp .bash_profile.macOS ~/.bash_profile
+cp .inputrc.macOS /.inputrc
 cp .gitconfig gpg-agent.conf gpg.conf ~/
 
 brew tap homebrew/versions
