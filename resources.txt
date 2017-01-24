@@ -1,0 +1,2 @@
+https://github.com/drduh/YubiKey-Guide
+https://www.rempe.us/blog/yubikey-gnupg-2-1-and-ssh/
