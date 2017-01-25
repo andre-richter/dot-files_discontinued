@@ -7,7 +7,7 @@ ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
 
 mkdir ~/.gnupg/
 ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
-ln -s ~/repos/dot-files/gpg-agent.conf ~/.gpg-agent.conf
+ln -s ~/repos/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 brew tap homebrew/versions
 brew install gnupg21
