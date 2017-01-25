@@ -7,6 +7,9 @@ alias grep='grep --color=auto'
 alias encrypt='gpg2 --encrypt --recipient "50E17457" '
 alias decrypt='gpg2 --decrypt '
 
+# For safety:
+alias gpg='gpg2'
+
 alias ubuntu='docker run -it --rm -v `pwd`:/data ubuntu /bin/bash'
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh

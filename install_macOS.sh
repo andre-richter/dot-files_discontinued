@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-cp .bash_profile.macOS ~/.bash_profile
-cp .inputrc.macOS /.inputrc
-cp .gitconfig gpg-agent.conf gpg.conf ~/
+ln -s ~/repos/dot-files/.bash_profile.macOS ~/.bash_profile
+ln -s ~/repos/dot-files/.inputrc.macOS ~/.inputrc
+
+ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
+
+mkdir ~/.gnupg/
+ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
+ln -s ~/repos/dot-files/gpg-agent.conf ~/.gpg-agent.conf
 
 brew tap homebrew/versions
 brew install gnupg21

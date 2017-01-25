@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 ln -s ~/repos/dot-files/.bashrc ~/.bash_aliases
-cp .gitconfig gpg.conf ~/
+
+ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
+
 mkdir ~/.gnupg/
-cp gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
+ln -s ~/repos/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 sudo apt-get install -y gnupg2 gnupg-agent scdaemon pcscd
 
