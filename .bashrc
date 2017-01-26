@@ -4,7 +4,7 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 alias grep='grep --color=auto'
-alias encrypt='gpg2 --encrypt --recipient "50E17457" '
+alias encrypt='gpg2 --encrypt --recipient 0x20575B0850E17457 '
 alias decrypt='gpg2 --decrypt '
 
 # For safety:
