@@ -7,7 +7,6 @@ export TERM=xterm-256color
 alias ls='ls -G'
 
 alias agent-reload='sudo killall gpg-agent && gpg-agent --daemon'
-export GPG_TTY=$(tty)
 
 source ~/repos/dot-files/.bashrc
 
