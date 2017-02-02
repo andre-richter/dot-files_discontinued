@@ -15,4 +15,5 @@ alias ubuntu='docker run -it --rm -v `pwd`:/data ubuntu /bin/bash'
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY=$(tty)
 
-echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
+alias iamhere='"UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1'
+iamhere
