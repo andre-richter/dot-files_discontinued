@@ -1,0 +1,10 @@
+unbind C-b
+set-option -g prefix C-a
+bind C-a send-prefix
+
+bind . split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+set -g mouse on

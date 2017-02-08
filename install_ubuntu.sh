@@ -5,6 +5,7 @@
 ln -s ~/repos/dot-files/.bashrc ~/.bash_aliases
 
 ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
+ln -s ~/repos/dot-files/.tmux.conf.linux ~/.tmux.conf
 
 mkdir ~/.gnupg/
 chmod 700 ~/.gnupg/
