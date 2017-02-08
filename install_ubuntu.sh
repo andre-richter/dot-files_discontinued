@@ -11,6 +11,6 @@ chmod 700 ~/.gnupg/
 ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/repos/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
-sudo apt-get install -y gnupg2 gnupg-agent scdaemon pcscd
+sudo apt-get install -y gnupg2 gnupg-agent pinentry-curses scdaemon pcscd
 
 gpg2 --recv-key 0x20575b0850e17457
