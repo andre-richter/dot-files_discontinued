@@ -12,6 +12,7 @@ alias decrypt='gpg2 --decrypt '
 alias gpg='gpg2'
 
 alias ubuntu='docker run -it --rm -v `pwd`:/data ubuntu /bin/bash'
+alias mkreadme='docker run -it --rm -v `pwd`:/work andrerichter/mkreadme'
 
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY=$(tty)
