@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git clone git://github.com/jimeh/git-aware-prompt.git
+
 ./set_perms.sh
 
 ln -s ~/repos/dot-files/.bashrc ~/.bash_aliases
