@@ -20,5 +20,9 @@ alias mkreadme='docker run -it --rm -v `pwd`:/work andrerichter/mkreadme'
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY=$(tty)
 
+function hexdiff {
+    meld <(hexdump -C $1) <(hexdump -C $2)
+}
+
 alias iamhere='echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1'
 iamhere
