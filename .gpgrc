@@ -4,7 +4,6 @@ if [ -z "$SSH_CLIENT" ]; then
    export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 fi
 
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 export GPG_TTY=$(tty)
 
 # For safety:
