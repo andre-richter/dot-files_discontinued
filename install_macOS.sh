@@ -1,23 +1,31 @@
 #!/usr/bin/env bash
 
-git clone git://github.com/jimeh/git-aware-prompt.git
+#
+# Insert needed homebrew taps here
+#
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-./set_perms.sh
+rm -rf ~/.zshrc
+ln -s ~/repos/dot-files/.zshrc ~/.zshrc
 
-ln -s ~/repos/dot-files/.bash_profile.macOS ~/.bash_profile
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+# Port this one to zsh:
+# ln -s ~/repos/dot-files/.bash_profile.macOS ~/.bash_profile
 ln -s ~/repos/dot-files/.inputrc.macOS ~/.inputrc
 
 ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
 
-mkdir ~/.gnupg/
-chmod 700 ~/.gnupg/
-ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
-ln -s ~/repos/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-
-brew tap homebrew/versions
-brew install gnupg21
-brew install pinentry
-
-sudo ln -s /usr/local/bin/pinentry-curses /usr/bin/pinentry-curses
-
-gpg2 --recv-key 0x20575b0850e17457
+for i in "$@"
+do
+    case $i in
+	--gpg)
+            bash install_gpg.macOS.sh
+	    touch .use_gpgrc
+	    shift
+	    ;;
+	*)
+	    ;;
+    esac
+done
