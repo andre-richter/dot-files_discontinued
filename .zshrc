@@ -88,6 +88,10 @@ function hexdiff {
     meld <(hexdump -C $1) <(hexdump -C $2)
 }
 
+function dtbdiff {
+    meld <(dtc -I dtb -O dts $1) <(dtc -I dtb -O dts $2)
+}
+
 alias ll='ls -alFh'
 alias lll='ls -lFh'
 alias la='ls -A'
