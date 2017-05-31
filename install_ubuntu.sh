@@ -4,6 +4,8 @@ sudo apt install fonts-powerline zsh curl
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
+curl -o ~/.oh-my-zsh/themes/unfunky.zsh-theme https://raw.githubusercontent.com/andre-richter/unfunky-theme/master/unfunky.zsh-theme
+
 rm -rf ~/.zshrc
 ln -s ~/repos/dot-files/.zshrc ~/.zshrc
 

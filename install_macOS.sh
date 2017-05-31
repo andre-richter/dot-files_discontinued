@@ -5,6 +5,8 @@
 #
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+curl -o ~/.oh-my-zsh/themes/unfunky.zsh-theme https://raw.githubusercontent.com/andre-richter/unfunky-theme/master/unfunky.zsh-theme
+
 rm -rf ~/.zshrc
 ln -s ~/repos/dot-files/.zshrc ~/.zshrc
 
