@@ -88,7 +88,7 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' special-dirs true
 
 function hexdiff {
-    if [ $# -eq 2]; then
+    if [ $# -eq 2 ]; then
 	meld =(hexdump -C $1) =(hexdump -C $2)
     else
 	emacs =(hexdump -C $1)
@@ -96,7 +96,7 @@ function hexdiff {
 }
 
 function dtbdiff {
-    if [ $# -eq 2]; then
+    if [ $# -eq 2 ]; then
 	meld =(dtc -I dtb -O dts $1) =(dtc -I dtb -O dts $2)
     else
 	emacs =(dtc -I dtb -O dts $1)
