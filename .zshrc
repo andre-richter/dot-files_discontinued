@@ -84,6 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Completion for ..<TAB>
+zstyle ':completion:*' special-dirs true
+
 function hexdiff {
     if [ $# -eq 2]; then
 	meld =(hexdump -C $1) =(hexdump -C $2)
