@@ -85,11 +85,19 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 function hexdiff {
-    meld <(hexdump -C $1) <(hexdump -C $2)
+    if [ $# -eq 2]; then
+	meld =(hexdump -C $1) =(hexdump -C $2)
+    else
+	emacs =(hexdump -C $1)
+    fi
 }
 
 function dtbdiff {
-    meld <(dtc -I dtb -O dts $1) <(dtc -I dtb -O dts $2)
+    if [ $# -eq 2]; then
+	meld =(dtc -I dtb -O dts $1) =(dtc -I dtb -O dts $2)
+    else
+	emacs =(dtc -I dtb -O dts $1)
+    fi
 }
 
 alias ll='ls -alFh'
