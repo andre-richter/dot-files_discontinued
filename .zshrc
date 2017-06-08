@@ -87,6 +87,39 @@ source $ZSH/oh-my-zsh.sh
 # Completion for ..<TAB>
 zstyle ':completion:*' special-dirs true
 
+# Syntax highlighting
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[default]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+
+ZSH_HIGHLIGHT_STYLES[path]=fg=white
+
+ZSH_HIGHLIGHT_STYLES[alias]=fg=221,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=221,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=221,bold
+
+ZSH_HIGHLIGHT_STYLES[function]=fg=213,bold
+
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=75,bold
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=75,bold
+
+ZSH_HIGHLIGHT_STYLES[comment]=fg=36
+
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=208
+
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=70
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=70
+
+# ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
+# ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+# ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+# ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+# ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+# ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
+# ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
+# ZSH_HIGHLIGHT_STYLES[assign]=none
+
 function hexdiff {
     if [ $# -eq 2 ]; then
 	meld =(hexdump -C $1) =(hexdump -C $2)
@@ -122,5 +155,3 @@ fi
 if [ -f ~/repos/dot-files/.additional_profile ]; then
     source ~/repos/dot-files/.additional_profile
 fi
-
-source ~/repos/dot-files/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
