@@ -136,6 +136,10 @@ function dtbdiff {
     fi
 }
 
+function f {
+    find . | grep $1
+}
+
 alias ll='ls -alFh'
 alias lll='ls -lFh'
 alias la='ls -A'
