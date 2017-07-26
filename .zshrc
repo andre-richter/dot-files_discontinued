@@ -129,10 +129,22 @@ function hexdiff {
 }
 
 function dtbdiff {
-    if [ $# -eq 2 ]; then
-	meld =(dtc -I dtb -O dts $1) =(dtc -I dtb -O dts $2)
-    else
-	emacs =(dtc -I dtb -O dts $1)
+    if [ -n "$1" ]; then
+	dtb1=$(basename $1)
+	dts1="${dtb1/%b/s}"
+	dtc -I dtb -O dts -o /tmp/$dts1 $1
+    fi
+
+    if [ -n "$2" ]; then
+	dtb2=$(basename $2)
+	dts2="${dtb2/%b/s}"
+	dtc -I dtb -O dts -o /tmp/$dts2 $2
+    fi
+
+    if [ $# -gt 1 ]; then
+	meld /tmp/$dts1 /tmp/$dts2
+    elif [ $# -eq 1 ]; then
+	emacs /tmp/$dts1
     fi
 }
 
