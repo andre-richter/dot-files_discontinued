@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/arichter/.oh-my-zsh
+export ZSH=/home/arichter/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -150,6 +150,16 @@ function dtbdiff {
 
 function f {
     find . | grep $1
+}
+
+function git-config-local-github {
+    git config --replace-all user.name "Andre Richter"
+    git config --replace-all user.email "andre.o.richter@gmail.com"
+    git config --replace-all user.signingkey "50E17457"
+    git config --replace-all core.editor "emacs"
+    git config --replace-all commit.gpgsign "true"
+    git config --replace-all gpg.program "gpg2"
+    git config --replace-all push.default "simple"
 }
 
 alias ll='ls -alFh'
