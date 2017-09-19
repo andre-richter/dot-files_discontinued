@@ -124,31 +124,13 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=70
 # override it.
 export TERM=xterm-256color
 
+source ~/repos/dot-files/scripts/dtdiff.zsh
+
 function hexdiff {
     if [ $# -eq 2 ]; then
 	meld =(hexdump -C $1) =(hexdump -C $2)
     else
 	emacs =(hexdump -C $1)
-    fi
-}
-
-function dtbdiff {
-    if [ -n "$1" ]; then
-	dtb1=$(basename $1)
-	dts1="${dtb1/%b/s}"
-	dtc -I dtb -O dts -o /tmp/$dts1 $1
-    fi
-
-    if [ -n "$2" ]; then
-	dtb2=$(basename $2)
-	dts2="${dtb2/%b/s}"
-	dtc -I dtb -O dts -o /tmp/$dts2 $2
-    fi
-
-    if [ $# -gt 1 ]; then
-	meld /tmp/$dts1 /tmp/$dts2
-    elif [ $# -eq 1 ]; then
-	emacs /tmp/$dts1
     fi
 }
 
