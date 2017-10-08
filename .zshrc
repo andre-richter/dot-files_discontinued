@@ -156,8 +156,8 @@ alias grep='grep --color=auto'
 
 alias ubuntu='docker run -it --rm -v `pwd`:/data ubuntu /bin/bash'
 alias mkreadme='docker run -it --rm -v `pwd`:/work andrerichter/mkreadme'
-alias rust='~/repos/docker-rust-persistent/run.sh'
-alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly'
+alias rust='~/repos/docker-rust-persistent/run.sh -n'
+alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 if [ -f ~/repos/dot-files/.use_gpgrc ]; then
