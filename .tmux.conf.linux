@@ -8,3 +8,6 @@ unbind '"'
 unbind %
 
 set -g mouse on
+
+# Enable CTRL+Arrow keys
+set-window-option -g xterm-keys on
