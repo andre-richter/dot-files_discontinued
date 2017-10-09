@@ -144,6 +144,9 @@ function git-config-local-github {
     git config --replace-all push.default "simple"
 }
 
+# Try to launch tmux per default over ssh
+function ssh() {/usr/bin/ssh -t $@ "tmux new || zsh || bash";}
+
 alias ll='ls -alFh'
 alias lll='ls -lFh'
 alias la='ls -A'
@@ -157,7 +160,7 @@ alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 # Kill current tmux session
-alias tk='tmux ls | cut -d: -f1 | xargs -l1 tmux kill-session -t'
+alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
 
 alias e='exit'
 
