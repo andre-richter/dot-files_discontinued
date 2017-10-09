@@ -15,3 +15,11 @@ set-window-option -g xterm-keys on
 # Override screen as default TERM. Needed amongst other for correct
 # display of italics.
 set -g default-terminal "xterm-256color"
+
+# Status bar colours
+set -g status-bg colour236
+set -g status-fg colour146
+
+# Border colours
+set -g pane-border-style fg=colour241
+set -g pane-active-border-style fg=colour7
