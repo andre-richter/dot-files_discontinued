@@ -11,3 +11,7 @@ set -g mouse on
 
 # Enable CTRL+Arrow keys
 set-window-option -g xterm-keys on
+
+# Override screen as default TERM. Needed amongst other for correct
+# display of italics.
+set -g default-terminal "xterm-256color"

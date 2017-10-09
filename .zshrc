@@ -120,10 +120,6 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=70
 # ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
 # ZSH_HIGHLIGHT_STYLES[assign]=none
 
-# Explicitly export the TERM for environments like tmux which tend to
-# override it.
-export TERM=xterm-256color
-
 source ~/repos/dot-files/scripts/dtdiff.zsh
 
 function hexdiff {
