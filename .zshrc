@@ -156,6 +156,13 @@ alias rust='~/repos/docker-rust-persistent/run.sh -n'
 alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
+# Kill current tmux session
+alias tk='tmux ls | cut -d: -f1 | xargs -l1 tmux kill-session -t'
+
+alias e='exit'
+
+alias emacs='emacs -nw'
+
 if [ -f ~/repos/dot-files/.use_gpgrc ]; then
     source ~/repos/dot-files/.gpgrc
 fi
