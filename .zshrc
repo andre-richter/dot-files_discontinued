@@ -159,9 +159,10 @@ alias rust='~/repos/docker-rust-persistent/run.sh -n'
 alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
+alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
-alias gp='git pull'
+alias gp='git push'
 alias gs='git status'
 
 # Kill current tmux session
