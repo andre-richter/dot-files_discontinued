@@ -84,6 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Keybindings
+bindkey '^H' backward-kill-word # CTRL-Backspace
+
 # Completion for ..<TAB>
 zstyle ':completion:*' special-dirs true
 
