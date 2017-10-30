@@ -47,6 +47,6 @@ function dtdiff {
     if [ $# -gt 1 ]; then
     	meld $FIRST $SECOND
     elif [ $# -eq 1 ]; then
-    	emacs $FIRST
+    	emacs -nw $FIRST
     fi
 }
