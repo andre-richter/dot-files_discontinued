@@ -28,5 +28,5 @@ set -g pane-border-style fg=colour241
 set -g pane-active-border-style fg=colour7
 
 # Copy paste to/from system clipboard
-bind-key -n -t emacs-copy M-w copy-pipe "xclip -i -sel p -f | xclip -i -sel c "
-bind-key -n C-y run "xclip -o | tmux load-buffer - ; tmux paste-buffer"
+# bind-key -n -t emacs-copy M-w copy-pipe "xclip -i -sel p -f | xclip -i -sel c "
+# bind-key -n C-y run "xclip -o | tmux load-buffer - ; tmux paste-buffer"
