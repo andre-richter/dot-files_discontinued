@@ -27,19 +27,21 @@ function source_and_sort {
 	exit 2
     fi
 
-    OUT=/tmp/$(strip_path_and_extension $DT).dts
+    OUT=/tmp/$2/$(strip_path_and_extension $DT).dts
     $DTC -I $IFORMAT -O dts -qq -f -s -o "$OUT" "$DT"
 
     echo "$OUT"
 }
 
 function dtdiff {
+    mkdir -p /tmp/1 /tmp/2
+
     if [ -n "$1" ]; then
-	FIRST=$(source_and_sort $1)
+	FIRST=$(source_and_sort $1 "1")
     fi
 
     if [ -n "$2" ]; then
-    	SECOND=$(source_and_sort $2)
+    	SECOND=$(source_and_sort $2 "2")
     fi
 
     if [ $# -gt 1 ]; then
