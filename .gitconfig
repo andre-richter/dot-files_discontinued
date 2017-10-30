@@ -5,4 +5,4 @@
 	default = simple
 
 [core]
-	editor = emacs
+	editor = emacs -nw
