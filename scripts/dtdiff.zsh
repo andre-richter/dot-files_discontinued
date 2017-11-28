@@ -28,7 +28,7 @@ function source_and_sort {
     fi
 
     OUT=/tmp/$2/$(strip_path_and_extension $DT).dts
-    $DTC -I $IFORMAT -O dts -qq -f -s -o "$OUT" "$DT"
+    $DTC -I $IFORMAT -O dts -o "$OUT" "$DT"
 
     echo "$OUT"
 }
