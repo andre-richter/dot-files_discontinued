@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export LD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$($HOME/.cargo/bin/rustc --print sysroot)/lib:$LD_LIBRARY_PATH
 
 # Keybindings
 bindkey '^H' backward-kill-word # CTRL-Backspace
