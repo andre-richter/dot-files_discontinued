@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt install fonts-powerline zsh curl
+sudo apt install fonts-powerline zsh curl tmux
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 cd ~/.oh-my-zsh/custom/plugins
