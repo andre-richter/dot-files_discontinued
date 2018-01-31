@@ -126,6 +126,7 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=70
 # ZSH_HIGHLIGHT_STYLES[assign]=none
 
 source ~/repos/dot-files/scripts/dtdiff.zsh
+source ~/repos/dot-files/scripts/last_output_tab_list.zsh
 
 function hexdiff {
     if [ $# -eq 2 ]; then
