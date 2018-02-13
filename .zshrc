@@ -170,6 +170,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gp='git push'
 alias gs='git status'
+alias git_commit_files='git show --pretty="" --name-only'
 
 # Kill current tmux session
 alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
