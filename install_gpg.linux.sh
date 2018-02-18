@@ -2,7 +2,7 @@
 
 ./set_perms.sh
 
-mkdir ~/.gnupg/
+mkdir -p ~/.gnupg/
 chmod 700 ~/.gnupg/
 ln -s ~/repos/dot-files/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/repos/dot-files/gpg-agent.conf ~/.gnupg/gpg-agent.conf
