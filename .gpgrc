@@ -1,6 +1,6 @@
 # set SSH_AUTH_SOCK to gpg agent only if we are not connected via ssh
 # otherwise use standard ssh agent. this enables ssh agent forwarding
-if [ -z "$SSH_CLIENT" ]; then
+if [[ (-z "$SSH_CLIENT") && (-S ~/.gnupg/S.gpg-agent.ssh) ]]; then
    export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 fi
 
