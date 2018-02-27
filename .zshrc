@@ -85,7 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ -x "$(command -v rustc)" ]; then
-  export LD_LIBRARY_PATH=$($HOME/.cargo/bin/rustc --print sysroot)/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH="$(rustc --print sysroot)/lib:$LD_LIBRARY_PATH"
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
 # Keybindings
