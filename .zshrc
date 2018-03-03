@@ -168,10 +168,6 @@ alias rust='~/repos/docker-rust-persistent/run.sh -n'
 alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
-alias ga='git add'
-alias gc='git commit'
-alias gd='git diff'
-alias gp='git push'
 alias gs='git status'
 alias git_commit_files='git show --pretty="" --name-only'
 
