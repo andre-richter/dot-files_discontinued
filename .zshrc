@@ -135,7 +135,7 @@ function hexdiff {
     if [ $# -eq 2 ]; then
 	meld =(hexdump -C $1) =(hexdump -C $2)
     else
-	emacs =(hexdump -C $1)
+	emacs -nw =(hexdump -C $1)
     fi
 }
 
