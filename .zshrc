@@ -156,6 +156,27 @@ function git-config-local-github {
 # Try to launch tmux per default over ssh
 function ssh() {/usr/bin/ssh -t $@ "tmux new || zsh || bash";}
 
+# Scratch ramdisk
+RAMDISKDIR="/tmp/ramdisk"
+
+function mkscratch {
+    if [ ! -d "$RAMDISKDIR" ]; then
+	mkdir "$RAMDISKDIR"
+	sudo mount -t tmpfs -o size=16g tmpfs "$RAMDISKDIR"
+    else
+	echo "$RAMDISKDIR already exists!"
+    fi
+}
+
+function delscratch {
+    if [ -d "$RAMDISKDIR" ]; then
+	sudo umount "$RAMDISKDIR"
+	rmdir "$RAMDISKDIR"
+    else
+	echo "$RAMDISKDIR doesn't exist!"
+    fi
+}
+
 alias ll='ls -alFh'
 alias lll='ls -lFh'
 alias la='ls -A'
