@@ -177,28 +177,27 @@ function delscratch {
     fi
 }
 
+# Random aliases
 alias ll='ls -alFh'
 alias lll='ls -lFh'
 alias la='ls -A'
 alias l='ls -CF'
 alias grep='grep --color=auto'
+alias e='exit'
+alias emacs='emacs -nw'
 
-alias buildpack='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb --net=host -v `pwd`:/data -w /data buildpack-deps /bin/bash'
-alias mkreadme='docker run -it --rm -v `pwd`:/work andrerichter/mkreadme'
-alias rust='~/repos/docker-rust-persistent/run.sh -n'
-alias rust-nightly='~/repos/docker-rust-persistent/run.sh -c=nightly -n'
+# Docker aliases
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias buildpack='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb --net=host -v `pwd`:/data -w /data buildpack-deps /bin/bash'
 
+# Git aliases
 alias gs='git status'
 alias git_commit_files='git show --pretty="" --name-only'
 
 # Kill current tmux session
 alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
 
-alias e='exit'
-
-alias emacs='emacs -nw'
-
+# GPG
 if [ -f ~/repos/dot-files/.use_gpgrc ]; then
     source ~/repos/dot-files/.gpgrc
 fi
