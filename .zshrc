@@ -143,13 +143,20 @@ function f {
     find . | grep $1
 }
 
-function git-config-local-github {
+function git-config-gpg-local-github {
     git config --replace-all user.name "Andre Richter"
     git config --replace-all user.email "andre.o.richter@gmail.com"
     git config --replace-all user.signingkey "50E17457"
     git config --replace-all core.editor "emacs"
     git config --replace-all commit.gpgsign "true"
     git config --replace-all gpg.program "gpg2"
+    git config --replace-all push.default "simple"
+}
+
+function git-config-local-github {
+    git config --replace-all user.name "Andre Richter"
+    git config --replace-all user.email "andre.o.richter@gmail.com"
+    git config --replace-all core.editor "emacs"
     git config --replace-all push.default "simple"
 }
 
