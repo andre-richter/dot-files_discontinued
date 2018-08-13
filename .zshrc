@@ -196,6 +196,7 @@ alias emacs='emacs -nw'
 # Docker aliases
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias buildpack='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb --net=host -v `pwd`:/data -w /data buildpack-deps /bin/bash'
+alias grok='docker run -it -v $PWD:/src -p 8080:8080 -p 2222:22 opengrok/docker:latest'
 
 # Git aliases
 alias gs='git status'
