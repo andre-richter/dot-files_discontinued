@@ -154,6 +154,10 @@ function git-config-gpg-local-github {
 }
 
 function git-config-local-github {
+    git config --remove-section user
+    git config --remove-section commit
+    git config --remove-section gpg
+
     git config --replace-all user.name "Andre Richter"
     git config --replace-all user.email "andre.o.richter@gmail.com"
     git config --replace-all core.editor "emacs"
