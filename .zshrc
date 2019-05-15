@@ -209,6 +209,8 @@ alias git_commit_files='git show --pretty="" --name-only'
 # Kill current tmux session
 alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
 
+alias rgi='rg -i'
+
 # GPG
 if [ -f ~/repos/dot-files/.use_gpgrc ]; then
     source ~/repos/dot-files/.gpgrc
