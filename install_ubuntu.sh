@@ -35,6 +35,3 @@ curl -o ~/.oh-my-zsh/themes/unfunky.zsh-theme https://raw.githubusercontent.com/
 
 rm -rf ~/.zshrc
 ln -s ~/repos/dot-files/.zshrc ~/.zshrc
-
-echo "Remember to install One Dark Pro theme for vscode"
-ln -s ~/repos/dot-files/vscode_settings.json ~/.config/Code/User/settings.json
