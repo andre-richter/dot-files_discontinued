@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-ln -s ~/repos/dot-files/.tmux.conf.linux ~/.tmux.conf
+# tmux config
+rm ~/.tmux.conf
+ln -s ~/repos/dot-files/.tmux.conf ~/.tmux.conf
 
+# Conditionally install gpg
 for i in "$@"
 do
     case $i in
 	--gpg)
-            bash install_gpg.linux.sh
+            bash install_gpg.sh
 	    touch .use_gpgrc
 	    shift
 	    ;;
@@ -25,6 +28,7 @@ else
     fi
 fi
 
+# Productivity tools
 sudo apt install fonts-powerline zsh curl tmux
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -35,3 +39,6 @@ curl -o ~/.oh-my-zsh/themes/unfunky.zsh-theme https://raw.githubusercontent.com/
 
 rm -rf ~/.zshrc
 ln -s ~/repos/dot-files/.zshrc ~/.zshrc
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install

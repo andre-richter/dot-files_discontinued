@@ -202,14 +202,14 @@ alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias buildpack='docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb --net=host -v `pwd`:/data -w /data buildpack-deps /bin/bash'
 alias grok='docker run -it -v $PWD:/src -p 8080:8080 -p 2222:22 opengrok/docker:latest'
 
-# Git aliases
-alias gs='git status'
-alias git_commit_files='git show --pretty="" --name-only'
-
 # Kill current tmux session
 alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
 
+# ripgrep
 alias rgi='rg -i'
+
+# Git
+alias gs='git status'
 
 # GPG
 if [ -f ~/repos/dot-files/.use_gpgrc ]; then
@@ -226,3 +226,5 @@ fi
 if [ -f ~/repos/dot-files/.additional_profile ]; then
     source ~/repos/dot-files/.additional_profile
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

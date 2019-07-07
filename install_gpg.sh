@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-./set_perms.sh
+# Permissions might have been corrupted when downloading these files from git.
+chmod 600 gpg-agent.conf gpg.conf
 
 mkdir -p ~/.gnupg/
 chmod 700 ~/.gnupg/
