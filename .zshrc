@@ -140,7 +140,7 @@ function hexdiff {
 }
 
 function f {
-    find . | grep $1
+    find . | rg -i $1
 }
 
 function git-config-gpg-local-github {
