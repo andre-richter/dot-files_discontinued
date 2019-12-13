@@ -6,3 +6,6 @@
 
 [core]
 	editor = emacs -nw
+
+[diff]
+    tool = meld
