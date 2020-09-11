@@ -196,6 +196,7 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias e='exit'
 alias emacs='emacs -nw'
+alias cat='bat'
 
 # Docker aliases
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
@@ -228,3 +229,5 @@ if [ -f ~/repos/dot-files/.additional_profile ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /opt/rust-raspberrypi-OS-tutorials/devtool_completion.bash
