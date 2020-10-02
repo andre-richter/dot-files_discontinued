@@ -202,7 +202,7 @@ alias grok='docker run -it -v $PWD:/src -p 8080:8080 -p 2222:22 opengrok/docker:
 alias tk='echo $TMUX | cut -d, -f3 | xargs -l1 tmux kill-session -t'
 
 # ripgrep
-alias rgi='rg -i'
+alias rgi='rg -i --hidden'
 
 # Git
 alias gs='git status'
