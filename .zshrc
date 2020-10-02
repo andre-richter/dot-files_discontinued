@@ -225,4 +225,4 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /opt/rust-raspberrypi-OS-tutorials/devtool_completion.bash
+[ -f /opt/rust-raspberrypi-OS-tutorials/devtool_completion.bash ] && source /opt/rust-raspberrypi-OS-tutorials/devtool_completion.bash
