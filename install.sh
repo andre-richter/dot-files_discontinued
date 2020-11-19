@@ -29,8 +29,9 @@ else
 fi
 
 # Productivity tools
-sudo apt install fonts-firacode zsh curl tmux
+sudo apt install zsh curl tmux
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -fsSL https://starship.rs/install.sh | bash
 
 cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
