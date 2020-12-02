@@ -29,6 +29,3 @@ symbol = " "
 
 [git_branch]
 style = "bold fg:216"
-
-[git_status]
-style = "bold fg:69"

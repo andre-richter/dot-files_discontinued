@@ -191,7 +191,7 @@ alias l='ls -CF'
 alias grep='grep --color=auto'
 alias e='exit'
 alias emacs='emacs -nw'
-alias cat='bat'
+alias cat='echo "use bat"'
 
 # Docker aliases
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
