@@ -29,3 +29,6 @@ symbol = " "
 
 [git_branch]
 style = "bold fg:216"
+
+[perl]
+disabled = true
