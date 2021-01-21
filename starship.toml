@@ -32,3 +32,6 @@ style = "bold fg:216"
 
 [perl]
 disabled = true
+
+[nodejs]
+disabled = true
