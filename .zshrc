@@ -134,10 +134,6 @@ function hexdiff {
     fi
 }
 
-function f {
-    find . 2> /dev/null | rg -i $1
-}
-
 function git-config-gpg-local-github {
     git config --replace-all user.name "Andre Richter"
     git config --replace-all user.email "andre.o.richter@gmail.com"
