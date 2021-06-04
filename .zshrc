@@ -181,9 +181,9 @@ function delscratch {
 
 function cat {
     if [ -x "$(command -v bat)" ]; then
-	bat -p $@
+        bat -p $@
     else
-	/usr/bin/cat $@
+        /usr/bin/cat $@
     fi
 }
 
