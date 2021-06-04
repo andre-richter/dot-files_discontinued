@@ -37,8 +37,6 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
 
-# curl -o ~/.oh-my-zsh/themes/unfunky.zsh-theme https://raw.githubusercontent.com/andre-richter/unfunky-theme/master/unfunky.zsh-theme
-
 rm -rf ~/.zshrc
 ln -s ~/repos/dot-files/.zshrc ~/.zshrc
 
@@ -47,3 +45,8 @@ ln -s ~/repos/dot-files/starship.toml ~/.config/starship.toml
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+# Now with GPG installed, switch to SSH remote URL
+git remote set-url origin git@github.com:andre-richter/dot-files.git
+
+echo "Now, install Ubuntu Mono Nerd Font Regular, and set it as terminal font; Size 13"

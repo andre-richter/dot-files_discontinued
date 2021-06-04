@@ -14,6 +14,16 @@ alias gpg='gpg2'
 alias encrypt='gpg2 --encrypt --recipient 0x20575B0850E17457 '
 alias decrypt='gpg2 --decrypt '
 
+function gpg-focus() {
+   pid=$(pgrep pinentry-curses)
+   if [ "$pid" ] ; then
+     kill "$pid"
+   fi
+   echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
+}
+gpg-focus
+
+
 gpg-restart() {
    pid=$(pgrep gpg-agent)
    if [ "$pid" ] ; then
