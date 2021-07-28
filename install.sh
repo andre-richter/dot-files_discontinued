@@ -47,6 +47,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Now with GPG installed, switch to SSH remote URL
-git remote set-url origin git@github.com:andre-richter/dot-files.git
+if [ -f ~/repos/dot-files/.use_gpgrc ]; then
+    git remote set-url origin git@github.com:andre-richter/dot-files.git
+fi
 
 echo "Now, install Ubuntu Mono Nerd Font Regular, and set it as terminal font; Size 13"
