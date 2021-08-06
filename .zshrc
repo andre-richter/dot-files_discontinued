@@ -156,7 +156,7 @@ function git-config-local-github {
 }
 
 # Try to launch tmux per default over ssh
-function ssh() {/usr/bin/ssh -t $@ "tmux new || zsh || bash";}
+function sshtmux() {/usr/bin/ssh -t $@ "tmux new || zsh || bash";}
 
 # Scratch ramdisk
 RAMDISKDIR="/tmp/ramdisk"
