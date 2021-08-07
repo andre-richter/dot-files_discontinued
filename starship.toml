@@ -16,9 +16,6 @@ truncate_to_repo = false
 truncation_length = 0
 style = "bold blue"
 
-[docker]
-symbol = " "
-
 [ruby]
 style = "bold fg:88"
 symbol = "  "
