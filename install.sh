@@ -29,7 +29,7 @@ else
 fi
 
 # Productivity tools
-sudo apt install zsh curl tmux
+sudo apt install zsh curl tmux git tig
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -fsSL https://starship.rs/install.sh | bash
 
