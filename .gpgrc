@@ -1,33 +1,29 @@
-# set SSH_AUTH_SOCK to gpg agent only if we are not connected via ssh, otherwise
-# use standard ssh agent. this enables ssh agent forwarding.
-
-# >= Ubuntu 18.04
-if [[ (-z "$SSH_CLIENT") ]]; then
-   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-fi
-
 export GPG_TTY=$(tty)
 
-# For safety:
-alias gpg='gpg2'
-
-alias encrypt='gpg2 --encrypt --recipient 0x20575B0850E17457 '
-alias decrypt='gpg2 --decrypt '
+# Don't use Yubikey derived SSH on work PCs
+if [ ! -f ~/repos/dot-files/.is_work_pc ]; then
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+fi
 
 function gpg-focus() {
-   pid=$(pgrep pinentry-curses)
-   if [ "$pid" ] ; then
-     kill "$pid"
-   fi
+   pkill pinentry-curses
    echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
 }
 gpg-focus
 
 
 gpg-restart() {
-   pid=$(pgrep gpg-agent)
-   if [ "$pid" ] ; then
-     kill -9 "$pid"
-   fi
+   pkill gpg-agent
    gpg-focus
 }
+
+gpg-use-ssh() {
+  gpg-focus
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+}
+
+# For safety:
+alias gpg='echo "use gpg2!"'
+
+alias encrypt='gpg2 --encrypt --recipient 0x20575B0850E17457 '
+alias decrypt='gpg2 --decrypt '

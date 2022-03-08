@@ -158,6 +158,16 @@ function git-config-local-github {
 # Try to launch tmux per default over ssh
 function sshtmux() {/usr/bin/ssh -t $@ "tmux new || zsh || bash";}
 
+# Use to update old tmux session with new env vars
+if [ -n "$TMUX" ]; then
+  function refresh {
+    export $(tmux show-environment | grep "^SSH_AUTH_SOCK")
+    export $(tmux show-environment | grep "^DISPLAY")
+  }
+else
+  function refresh { }
+fi
+
 # Scratch ramdisk
 RAMDISKDIR="/tmp/ramdisk"
 

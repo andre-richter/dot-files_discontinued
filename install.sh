@@ -4,17 +4,20 @@
 rm ~/.tmux.conf
 ln -s ~/repos/dot-files/.tmux.conf ~/.tmux.conf
 
-# Conditionally install gpg
+# Options
 for i in "$@"
 do
     case $i in
-	--gpg)
+        --gpg)
             bash install_gpg.sh
-	    touch .use_gpgrc
-	    shift
-	    ;;
-	*)
-	    ;;
+            touch .use_gpgrc
+            shift
+            ;;
+        --is_work_pc)
+            touch .is_work_pc
+            ;;
+        *)
+            ;;
     esac
 done
 
@@ -22,9 +25,9 @@ if [ -e ~/.gitconfig ]; then
     echo "Skipping .gitconfig, file already exists!"
 else
     if [ -f ~/repos/dot-files/.use_gpgrc ]; then
-	ln -s ~/repos/dot-files/.gitconfig_gpg ~/.gitconfig
+        ln -s ~/repos/dot-files/.gitconfig_gpg ~/.gitconfig
     else
-	ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
+        ln -s ~/repos/dot-files/.gitconfig ~/.gitconfig
     fi
 fi
 
