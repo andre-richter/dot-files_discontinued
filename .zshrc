@@ -175,6 +175,7 @@ function mkscratch {
     if [ ! -d "$RAMDISKDIR" ]; then
 	mkdir "$RAMDISKDIR"
 	sudo mount -t tmpfs -o size=16g tmpfs "$RAMDISKDIR"
+	sudo chown $USER:$USER "$RAMDISKDIR"
     else
 	echo "$RAMDISKDIR already exists!"
     fi
